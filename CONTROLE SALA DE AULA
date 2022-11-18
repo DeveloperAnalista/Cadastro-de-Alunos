@@ -1,0 +1,106 @@
+aula Aluno {
+    matrícula;
+    nome;
+    nota = nulo;
+    constructor(matrícula, nome) {
+        this.matricula = matrícula;
+        this.nome = nome;
+    }
+    alteraNota(nota) {
+        esta.nota = nota;
+    }
+}
+
+classe Turma {
+    alunos = new Array();
+    ultMatricula = 0;
+    construtor() {}
+    cadastraAluno(nome) {
+        this.alunos.push(new Aluno(++this.ultMatricula,nome))
+    }
+    removeAluno(nome) {
+        let posicao = this.localizaAluno(nome);
+        if(posição > -1) {
+            this.alunos.splice(posição,1);
+        } senão {
+            console.log("Aluno " + nome + " não encontrado.")
+        }
+    }
+    localizaAluno(nome) {
+        for(let i = 0; i < this.alunos.length; i++) {
+            if(this.alunos[i].nome == nome) {
+                retornar i;
+            }
+        }
+        retornar -1;
+    }
+    alteraNota(nome, nota) {
+        let posicao = this.localizaAluno(nome);
+        if(posição > -1) {
+            this.alunos[posicao].alteraNota(nota);
+        } senão {
+            console.log("Aluno " + nome + " não encontrado.")
+        }
+
+    }
+    meios de comunicação(){
+    deixe soma = 0;
+    for(deixe a linha deste.alunos)
+    {
+    soma += linha.nota;
+    }
+    return soma / this.alunos.length;
+    }
+}
+
+html {
+    background-image: linear-gradient( #202124, #000);
+    anexo de plano de fundo: fixo;
+    altura: 100%;
+}
+corpo {
+    margem: 10%;
+    font-family: 'Courier New', Courier, monoespaçado;
+    tamanho da fonte: 120%;
+    cor: #fff;
+}
+
+let manha = new Turma();
+manha.cadastraAluno("Rafaela");
+manha.cadastraAluno("Fernanda");
+manha.cadastraAluno("Nayara");
+
+manha.alteraNota("Rafaela",4.8);
+manha.alteraNota("Fernanda",7);
+manha.alteraNota("Nayara",6.99);
+
+console.log(manha.media());
+console.log(manha);
+
+var parágrafo = document.createElement("p");
+paragrafo.innerHTML = "Alo mundo";
+paragrafo.style = "cor: vermelho";
+var alvo = document.getElementsByTagName("body")[0];
+alvo.appendChild(parágrafo);
+
+
+
+// imprime o texto seguido de
+// uma quebra de linha
+function imprima(texto) {
+	document.write(texto + "<br>");
+}
+
+// formata números no formato brasileiro
+função formatoNumero(valor) {
+	return new Intl.NumberFormat('pt-BR', { mínimoIntegerDigits: 2 }).format(valor);
+}
+
+// formata moedas no formato brasileiro
+função formatoMoeda(valor) {
+	let padraoBR = Intl.NumberFormat("pt-BR", {
+		estilo: "moeda",
+		moeda: "BRL",
+	});
+	return padraoBR.format(valor);
+}
